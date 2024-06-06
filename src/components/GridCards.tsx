@@ -16,6 +16,10 @@ const generateCardGrid = () => {
         { id: 4, name: "wolverine", img: '/assets/wolverine.png' },
         { id: 5, name: "ironman", img: '/assets/iron-man.png' },
         { id: 5, name: "ironman", img: '/assets/iron-man.png' },
+        { id: 6, name: "thor", img: '/assets/thor.png' },
+        { id: 6, name: "thor", img: '/assets/thor.png' },
+        { id: 7, name: "deadpool", img: '/assets/deadpool.png' },
+        { id: 7, name: "deadpool", img: '/assets/deadpool.png' },
     ];
 
     const shuffledCardGrid = cardsData.sort(() => Math.random() - 0.5);
@@ -72,7 +76,7 @@ const GridCards = () => {
     return (
         <div className='flex flex-col justify-center items-center'>
             {victory && <h1 className='mb-4 text-amber-500 font-black text-2xl'>🥳You Won!🎉</h1>}
-            <div className="grid w-96 md:w-[30rem] grid-cols-3 place-items-center mb-4">
+            <div className="grid w-96 md:w-[30rem] grid-cols-4 place-items-center mb-4">
                 {cards.map((card, index) => (
                     <div onClick={() => handleClick(index)} key={index} className={`h-20 w-20 md:h-28 md:w-28 border-3 border-black flex justify-center items-center cursor-pointer bg-amber-200 rounded-lg mb-4 transition-transform duration-400 ${flipped.includes(index) || solved.includes(index) ? 'rotate-180' : ''}`}>
                         {
