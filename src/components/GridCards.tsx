@@ -1,6 +1,27 @@
 import { useEffect, useState } from 'react'
 import Card from './Card';
 
+const generateCardGrid = () => {
+
+    const cardsData = [
+        { id: 0, name: "spiderman", img: '/assets/spiderman.png' },
+        { id: 0, name: "spiderman", img: '/assets/spiderman.png' },
+        { id: 1, name: "antman", img: '/assets/ant-man.png' },
+        { id: 1, name: "antman", img: '/assets/ant-man.png' },
+        { id: 2, name: "batman", img: '/assets/batman.png' },
+        { id: 2, name: "batman", img: '/assets/batman.png' },
+        { id: 3, name: "captain-america", img: '/assets/captain-america.png' },
+        { id: 3, name: "captain-america", img: '/assets/captain-america.png' },
+        { id: 4, name: "wolverine", img: '/assets/wolverine.png' },
+        { id: 4, name: "wolverine", img: '/assets/wolverine.png' },
+        { id: 5, name: "ironman", img: '/assets/iron-man.png' },
+        { id: 5, name: "ironman", img: '/assets/iron-man.png' },
+    ];
+
+    console.log(typeof (cardsData));
+    return cardsData.sort(() => Math.random() - 0.5);
+}
+
 const cardsData = [
     { id: 0, name: "spiderman", img: '/assets/spiderman.png' },
     { id: 0, name: "spiderman", img: '/assets/spiderman.png' },
@@ -14,9 +35,10 @@ const cardsData = [
     { id: 4, name: "wolverine", img: '/assets/wolverine.png' },
     { id: 5, name: "ironman", img: '/assets/iron-man.png' },
     { id: 5, name: "ironman", img: '/assets/iron-man.png' },
-].sort(() => Math.random() - 0.5);
+];
 
 const GridCards = () => {
+
 
     //array of size 2. Will contian the indices of the two images
     const [flipped, setFlipped] = useState<number[]>([]);
@@ -53,11 +75,17 @@ const GridCards = () => {
 
     }, [cards, flipped, solved])
 
+    // const gameOver = () => {
+    //     if (solved.length === cards.length) {
+    //         setCards();
+    //     }
+    // }
+
     return (
         <div className='flex justify-center items-center'>
             <div className="grid w-96 md:w-[30rem] grid-cols-3 gap-0 place-items-center">
                 {cards.map((card, index) => (
-                    <div onClick={() => handleClick(index)} key={index} className={`h-20 w-20 md:h-28 md:w-28 border-3 border-black flex justify-center items-center cursor-pointer bg-amber-200 rounded-xl mb-4 transition-transform duration-300 ${flipped.includes(index) || solved.includes(index) ? 'rotate-180' : ''}`}>
+                    <div onClick={() => handleClick(index)} key={index} className={`h-20 w-20 md:h-28 md:w-28 border-3 border-black flex justify-center items-center cursor-pointer bg-amber-200 rounded-lg mb-4 transition-transform duration-400 ${flipped.includes(index) || solved.includes(index) ? 'rotate-180' : ''}`}>
                         {
                             flipped.includes(index) || solved.includes(index) ?
                                 <Card card={card} />
