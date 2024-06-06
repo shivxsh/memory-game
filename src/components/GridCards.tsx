@@ -30,7 +30,7 @@ const generateCardGrid = () => {
 const GridCards = () => {
 
 
-    //array of size 2. Will contian the indices of the two images
+    //array of size 2. Will contain the indices of the two images
     const [flipped, setFlipped] = useState<number[]>([]);
     const [solved, setSolved] = useState<number[]>([]);
     const [cards, setCards] = useState(generateCardGrid());
