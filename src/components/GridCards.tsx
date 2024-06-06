@@ -19,13 +19,16 @@ const GridCards = () => {
     ].sort(() => Math.random() - 0.5));
 
     return (
-        <div className="grid place-items-center">
-            <div className='h-96 w-96 grid grid-cols-3 gap-3 place-items-center mb-4'>
-                {cards.map((card, index) => {
-                    return <Card key={index} card={card} />
-                })}
+        <div className='flex felx-col justify-center items-center'>
+            <div className="grid w-96 grid-cols-3 gap-0 place-items-center">
+                {cards.map((card, index) => (
+                    <div key={index} className='h-20 w-20 md:h-28 md:w-28 border-3 animate-[flipCard_0.5s_linear] border-black flex justify-center items-center cursor-pointer bg-amber-200 rounded-xl mb-4'>
+                        <Card card={card} />
+                    </div>
+                ))}
             </div>
         </div>
+
     )
 }
 

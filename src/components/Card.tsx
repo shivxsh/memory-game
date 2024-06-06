@@ -1,4 +1,4 @@
-import React from 'react'
+import '../index.css'
 
 interface Card {
     id: number,
@@ -13,8 +13,8 @@ interface Props {
 
 const Card = ({ card }: Props) => {
     return (
-        <div className='w-20 h-20 border-3 border-black flex justify-center items-center cursor-pointer bg-amber-200 rounded-xl'>
-            <img src={card.img} width={50} alt={card.name} />
+        <div className='flex justify-center items-center h-full w-full'>
+            <img src={card.img} width={60} alt={card.name} />
         </div>
 
     )
