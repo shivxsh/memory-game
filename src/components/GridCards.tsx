@@ -26,9 +26,11 @@ const GridCards = () => {
     const handleClick = (index: number) => {
 
         //prevent multiple clicks on same card  + two clicks
-        if (!flipped.includes(index) && flipped.length < 2) {
+        if (!flipped.includes(index) && flipped.length < 2 && !solved.includes(index)) {
             setFlipped([...flipped, index]);
         }
+
+        // console.log(solved);
     }
 
     useEffect(() => {
@@ -48,20 +50,20 @@ const GridCards = () => {
                 checkForMatch();
             }, 500);
         }
+
     }, [cards, flipped, solved])
 
     return (
         <div className='flex justify-center items-center'>
             <div className="grid w-96 md:w-[30rem] grid-cols-3 gap-0 place-items-center">
                 {cards.map((card, index) => (
-                    <div onClick={() => handleClick(index)} className='h-20 w-20 md:h-28 md:w-28 border-3 border-black flex justify-center items-center cursor-pointer bg-amber-200 rounded-xl mb-4'>
+                    <div onClick={() => handleClick(index)} key={index} className={`h-20 w-20 md:h-28 md:w-28 border-3 border-black flex justify-center items-center cursor-pointer bg-amber-200 rounded-xl mb-4 transition-transform duration-300 ${flipped.includes(index) || solved.includes(index) ? 'rotate-180' : ''}`}>
                         {
                             flipped.includes(index) || solved.includes(index) ?
                                 <Card card={card} />
                                 :
                                 <Card card={{ id: -1, name: "cover", img: "/assets/cover.jpg" }} />
                         }
-
                     </div>
                 ))}
             </div>

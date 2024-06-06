@@ -8,13 +8,17 @@ export default {
     extend: {
       keyframes: {
         flipCard: {
-          '0%': { transform: 'rotateX(0)' },
-          '100%': { transform: 'rotateY(180deg)' }
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(180deg)' },
         },
-        hideImage: {
-          '0%': { transform: 'scale(1)' },
-          '100%': { transform: 'scale(0)' }
-        }
+        flipBack: {
+          '0%': { transform: 'rotateY(180deg)' },
+          '100%': { transform: 'rotateY(0deg)' },
+        },
+      },
+      animation: {
+        flipCard: 'flip 0.6s forwards',
+        flipBack: 'flip-back 0.6s forwards',
       },
       fontFamily: {
         'Honk': ['Honk', 'sans']
