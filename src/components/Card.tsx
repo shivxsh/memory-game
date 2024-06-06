@@ -14,7 +14,11 @@ interface Props {
 const Card = ({ card }: Props) => {
     return (
         <div className='flex justify-center items-center h-full w-full'>
-            <img src={card.img} width={60} alt={card.name} />
+            {card.name === "cover" ? (
+                <img src={card.img} alt={card.name} className="h-full w-full" />
+            ) : (
+                <img src={card.img} alt={card.name} width={60} />
+            )}
         </div>
 
     )
