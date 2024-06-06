@@ -1,4 +1,4 @@
-import GridBoxes from "./components/GridBoxes"
+import GridCards from "./components/GridCards"
 
 function App() {
   return (
@@ -8,10 +8,11 @@ function App() {
         Memory Match
       </h1>
 
+      <GridCards />
+
       <button className="bg-none text-3xl hover:bg-white border-2 font-Honk tracking-widest border-white rounded-md cursor-pointer">
         🔄️
       </button>
-      {/* <GridBoxes /> */}
     </div>
   )
 }
