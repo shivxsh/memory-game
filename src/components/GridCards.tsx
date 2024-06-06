@@ -37,7 +37,7 @@ const GridCards = () => {
 
     const handleClick = (index: number) => {
 
-        //prevent multiple clicks on same card  + two clicks
+        //prevent multiple clicks on same card  + only two selected + unique 
         if (!flipped.includes(index) && flipped.length < 2 && !solved.includes(index)) {
             setFlipped([...flipped, index]);
         }
