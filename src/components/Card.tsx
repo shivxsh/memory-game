@@ -13,9 +13,10 @@ interface Props {
 
 const Card = ({ card }: Props) => {
     return (
-        <div>
-            <img src={card.img} alt={card.name} />
+        <div className='w-20 h-20 border-3 border-black flex justify-center items-center cursor-pointer bg-amber-200 rounded-xl'>
+            <img src={card.img} width={50} alt={card.name} />
         </div>
+
     )
 }
 

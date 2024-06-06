@@ -16,14 +16,15 @@ const GridCards = () => {
         { id: 4, name: "wolverine", img: '/assets/wolverine.png' },
         { id: 5, name: "ironman", img: '/assets/iron-man.png' },
         { id: 5, name: "ironman", img: '/assets/iron-man.png' },
-        { id: 6, name: "black-panther", img: '/assets/black-panther.png' },
-        { id: 6, name: "black-panther", img: '/assets/black-panther.png' },
-    ]);
+    ].sort(() => Math.random() - 0.5));
+
     return (
-        <div>
-            {cards.map((card, index) => {
-                return <Card card={card} />
-            })}
+        <div className="grid place-items-center">
+            <div className='h-96 w-96 grid grid-cols-3 gap-3 place-items-center mb-4'>
+                {cards.map((card, index) => {
+                    return <Card key={index} card={card} />
+                })}
+            </div>
         </div>
     )
 }

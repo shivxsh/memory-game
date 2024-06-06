@@ -10,7 +10,7 @@ function App() {
 
       <GridCards />
 
-      <button className="bg-none text-3xl hover:bg-white border-2 font-Honk tracking-widest border-white rounded-md cursor-pointer">
+      <button className="text-3xl rounded-md cursor-pointer">
         🔄️
       </button>
     </div>
